@@ -18,3 +18,26 @@ Base = declarative_base()
 engine = create_engine('sqlite:///hotels.db', echo=True)
 
 
+class Hotel(Base):
+    __tablename__ = 'hotels'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String())
+    price = Column(Integer)
+
+    # reviews = relationship("Review", back_populates="hotels")
+
+    def __repr__(self):
+        return f'Hotel: {self.name}'
+    
+class Customer(Base):
+    __tablename__ = 'customers'
+
+    id = Column(Integer, primary_key=True)
+    first_name = Column(String())
+    last_name = Column(String())
+
+    # reviews = relationship("Review", back_populates="customer")
+
+    def __repr__(self):
+        return f'Customer: {self.name}'
