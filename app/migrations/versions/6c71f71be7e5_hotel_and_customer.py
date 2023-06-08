@@ -1,8 +1,8 @@
-"""Hotel and Customer
+"""hotel and customer
 
-Revision ID: 1c1451d87d9f
-Revises: 474b190942b2
-Create Date: 2023-06-07 22:40:28.862251
+Revision ID: 6c71f71be7e5
+Revises: af116bca328d
+Create Date: 2023-06-08 09:38:57.372138
 
 """
 from alembic import op
@@ -10,8 +10,8 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '1c1451d87d9f'
-down_revision = '474b190942b2'
+revision = '6c71f71be7e5'
+down_revision = 'af116bca328d'
 branch_labels = None
 depends_on = None
 

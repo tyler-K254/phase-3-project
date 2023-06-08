@@ -8,14 +8,14 @@ from sqlalchemy import (create_engine, PrimaryKeyConstraint, Column, String, Int
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, ForeignKey
 from sqlalchemy.orm import relationship
-# from .base import Base
-# from .restaurant import Restaurant
-# from .customer import Customer
 
 
 Base = declarative_base()
-#engine = create_engine('sqlite:///hotels.db')
+
 engine = create_engine('sqlite:///hotels.db', echo=True)
+
+
+    
 
 
 class Hotel(Base):
@@ -25,7 +25,7 @@ class Hotel(Base):
     name = Column(String())
     price = Column(Integer)
 
-    # reviews = relationship("Review", back_populates="hotels")
+    # reviews = relationship("Review", back_populates="hotel")
 
     def __repr__(self):
         return f'Hotel: {self.name}'
