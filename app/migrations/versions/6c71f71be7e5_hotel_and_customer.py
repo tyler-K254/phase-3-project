@@ -30,6 +30,17 @@ def upgrade() -> None:
     sa.Column('price', sa.Integer(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
+    op.create_table(
+    'reviews',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('hotel_id', sa.Integer(), nullable=False),
+    sa.Column('customer_id', sa.Integer(), nullable=False),
+    sa.Column('star_rating', sa.Integer(), nullable=True),
+    sa.ForeignKeyConstraint(['hotel_id'], ['hotels.id'], ),
+    sa.ForeignKeyConstraint(['customer_id'], ['customers.id'], ),
+    sa.PrimaryKeyConstraint('id')
+    )
+
     # ### end Alembic commands ###
 
 
